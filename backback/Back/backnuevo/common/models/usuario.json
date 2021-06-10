@@ -1,0 +1,67 @@
+{
+  "name": "usuario",
+  "plural": "usuarios",
+  "base": "User",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "id": {
+      "type": "string",
+      "required": true
+    },
+    "nombre": {
+      "type": "string"
+    },
+    "dni": {
+      "type": "string"
+    },
+    "cif": {
+      "type": "string"
+    },
+    "telefono": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string",
+      "required": true
+    },
+    "preferencias": {
+      "type": "string"
+    },
+    "direccion": {
+      "type": "string"
+    },
+    "password": {
+      "type": "string",
+      "required": true
+    },
+    "rol": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [ {
+    "accessType": "*",
+    "principalType": "ROLE",
+    "principalId": "usuario",
+    "permission": "ALLOW"
+  },{
+    "accessType": "READ",
+    "principalType": "ROLE",
+    "principalId": "$everyone",
+    "permission": "ALLOW",
+    "property": "listProjects"
+  },{
+    "accessType": "*",
+    "principalType": "ROLE",
+    "principalId": "$unauthenticated",
+    "permission": "ALLOW"
+  }],
+  "methods": {
+
+  }
+}
